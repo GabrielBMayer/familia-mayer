@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Árvore Genealógica da Família Mayer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm Harmony -->
+    <!-- Application Structure Plan: A dedicated, standalone page for the family tree. The structure is simple and clear: a main title, a central card for the patriarchs, and a responsive grid for the descendants. This focused approach enhances readability and provides a clean canvas for the genealogical data. -->
+    <!-- Visualization & Content Choices: Report Info: Family Tree Data -> Goal: Clearly present three generations -> Viz: A responsive grid of "family cards," which is a proven, mobile-friendly way to display hierarchical information without complex lines. | Report Info: Overall UX -> Goal: Create an elegant and focused experience -> Viz: A clean background, refined typography, and subtle animations to make the tree feel premium and easy to browse. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #F4F1EA;
+            color: #3C3633;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: #606C38;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #A68A64;
+            margin: 1rem auto;
+        }
+        .animated-entry {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animated-entry.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .family-card {
+            background-color: #FFFFFF;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .family-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+        <div class="animated-entry">
+            <h1 class="text-4xl md:text-5xl text-center section-title">A Árvore da Família Mayer</h1>
+            <p class="text-center text-lg text-gray-600 max-w-2xl mx-auto mt-4">O legado de Reynaldo Mayer e Edi Kaiser, medido através das gerações que se seguiram.</p>
+            
+            <div class="text-center p-6 bg-white rounded-lg max-w-lg mx-auto border-2 border-gray-200 shadow-lg mt-12">
+                 <h3 class="text-3xl font-bold">Os Patriarcas</h3>
+                 <div class="p-3 bg-gray-50 rounded border mt-4">
+                    <p class="font-bold text-2xl">Reynaldo Mayer</p>
+                    <p class="text-2xl font-bold" style="color: #A68A64;">&</p>
+                    <p class="font-bold text-2xl">Edi Kaiser</p>
+                 </div>
+            </div>
+
+            <div class="h-16 w-1 mx-auto bg-gray-200"></div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+                <div class="family-card text-center p-6 rounded-lg shadow-md">
+                    <h4 class="text-xl font-bold">Christina Mayer</h4>
+                    <p class="text-gray-600">+ Marcos Barroco</p>
+                    <hr class="my-3">
+                    <p class="font-semibold text-gray-800 bg-gray-100 p-2 rounded">Isadora Mayer Barroco</p>
+                </div>
+
+                <div class="family-card text-center p-6 rounded-lg shadow-md">
+                    <h4 class="text-xl font-bold">Margareth Mayer</h4>
+                    <p class="text-gray-600">+ Ari Pinheiro</p>
+                    <hr class="my-3">
+                    <div class="space-y-2">
+                        <p class="font-semibold text-gray-800 bg-gray-100 p-2 rounded">Ariane Mayer Pinheiro</p>
+                        <p class="font-semibold text-gray-800 bg-gray-100 p-2 rounded">Guilherme Mayer Pinheiro</p>
+                    </div>
+                </div>
+
+                <div class="family-card text-center p-6 rounded-lg shadow-md">
+                    <h4 class="text-xl font-bold">Daniel F. Mayer</h4>
+                    <p class="text-gray-600">+ Alexandra Genini</p>
+                    <hr class="my-3">
+                    <p class="font-semibold text-gray-800 bg-gray-100 p-2 rounded">Isabelle Mayer Genini</p>
+                </div>
+
+                <div class="family-card text-center p-6 rounded-lg shadow-md">
+                    <h4 class="text-xl font-bold">André G. Mayer</h4>
+                    <p class="text-gray-600">+ Viviane Bettoni Mayer</p>
+                    <hr class="my-3">
+                    <div class="space-y-2">
+                        <p class="font-semibold text-gray-800 bg-gray-100 p-2 rounded">Raphael J. Bettoni Mayer</p>
+                        <p class="font-semibold text-gray-800 bg-gray-100 p-2 rounded">Gabriel Bettoni Mayer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#3C3633] text-center py-10 mt-20">
+        <p class="text-[#F4F1EA]">Uma homenagem à jornada da Família Mayer.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedEntries = document.querySelectorAll('.animated-entry');
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            animatedEntries.forEach(function(entry) {
+                observer.observe(entry);
+            });
+        });
+    </script>
+</body>
+</html>
