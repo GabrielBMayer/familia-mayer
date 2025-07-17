@@ -45,12 +45,13 @@
         .image-container {
             overflow: hidden;
             border-radius: 0.5rem;
+            box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.2);
         }
         .gallery-image {
             transition: transform 0.5s ease;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            display: block;
         }
         .image-container:hover .gallery-image {
             transform: scale(1.05);
@@ -68,7 +69,7 @@
 <body class="antialiased">
 
     <main>
-        <section id="hero" class="h-screen flex items-center justify-center text-center bg-cover bg-center bg-fixed" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(oma.jpeg)">
+        <section id="hero" class="h-screen flex items-center justify-center text-center bg-cover bg-center bg-fixed" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://placehold.co/1920x1080/5C524A/EAEAEA?text=Edi+Kaiser+Mayer)">
             <div class="animated-entry">
                 <h1 class="text-6xl md:text-8xl font-bold">Edi Kaiser Mayer</h1>
                 <p class="mt-4 text-2xl text-gray-200">Uma Vida de Fé, Família e Tradição</p>
@@ -78,12 +79,12 @@
         <section id="raizes" class="section bg-[#2C2C2C]">
             <div class="container mx-auto">
                 <div class="grid md:grid-cols-2 gap-12 items-center animated-entry">
-                    <div class="grid grid-cols-2 gap-4 h-[70vh]">
-                        <div class="image-container">
-                            <img src="familiakaiser.png" alt="Ilustração do pioneirismo da família Kaiser" class="gallery-image">
+                    <div class="grid grid-cols-5 gap-4">
+                        <div class="image-container col-span-3">
+                            <img src="https://placehold.co/600x400/8C6D52/FFFFFF?text=Pioneirismo" alt="Ilustração do pioneirismo da família Kaiser" class="gallery-image">
                         </div>
-                        <div class="image-container mt-12">
-                            <img src="https://placehold.co/600x800/A4907C/FFFFFF?text=Comunidade" alt="Ilustração da comunidade luterana" class="gallery-image">
+                        <div class="image-container col-span-2">
+                            <img src="https://placehold.co/400x500/A4907C/FFFFFF?text=Comunidade" alt="Ilustração da comunidade luterana" class="gallery-image">
                         </div>
                     </div>
                     <div class="space-y-6">
@@ -101,12 +102,12 @@
                         <h3 class="text-5xl font-bold chapter-title">A Juventude e o Brilho Social</h3>
                         <p class="text-lg leading-relaxed text-gray-300">À medida que Maringá florescia, Edi tornava-se uma jovem vibrante. Em 1961, o seu carisma foi coroado ao ser eleita 2ª Princesa do Clube Recreativo Teuto-Brasileiro, um reconhecimento do seu papel de liderança. Foi nesse círculo social que conheceu Reynaldo Mayer, o homem com quem construiria a sua vida.</p>
                     </div>
-                    <div class="grid grid-cols-2 gap-4 h-[70vh] md:order-1">
-                        <div class="image-container">
-                             <img src="https://placehold.co/600x800/A4907C/FFFFFF?text=Juventude" alt="Ilustração da juventude de Edi Kaiser" class="gallery-image">
+                    <div class="grid grid-cols-5 gap-4 md:order-1">
+                         <div class="image-container col-span-2">
+                            <img src="https://placehold.co/400x500/8C6D52/FFFFFF?text=Baile" alt="Ilustração de um baile de clube" class="gallery-image">
                         </div>
-                        <div class="image-container mt-12">
-                            <img src="https://placehold.co/600x800/8C6D52/FFFFFF?text=Baile" alt="Ilustração de um baile de clube" class="gallery-image">
+                        <div class="image-container col-span-3">
+                             <img src="https://placehold.co/600x400/A4907C/FFFFFF?text=Juventude" alt="Ilustração da juventude de Edi Kaiser" class="gallery-image">
                         </div>
                     </div>
                 </div>
@@ -116,12 +117,12 @@
         <section id="matriarca" class="section bg-[#2C2C2C]">
             <div class="container mx-auto">
                 <div class="grid md:grid-cols-2 gap-12 items-center animated-entry">
-                    <div class="grid grid-cols-2 gap-4 h-[70vh]">
-                        <div class="image-container">
-                            <img src="https://placehold.co/600x800/E5D9B6/3C3633?text=Cultura" alt="Ilustração do Grupo Folclórico" class="gallery-image">
+                    <div class="grid grid-cols-5 gap-4">
+                        <div class="image-container col-span-3">
+                            <img src="https://placehold.co/600x400/E5D9B6/3C3633?text=Cultura" alt="Ilustração do Grupo Folclórico" class="gallery-image">
                         </div>
-                        <div class="image-container mt-12">
-                             <img src="https://placehold.co/600x800/A4907C/FFFFFF?text=Família" alt="Ilustração da família" class="gallery-image">
+                         <div class="image-container col-span-2">
+                             <img src="https://placehold.co/400x500/A4907C/FFFFFF?text=Família" alt="Ilustração da família" class="gallery-image">
                         </div>
                     </div>
                     <div class="space-y-6">
@@ -139,12 +140,12 @@
                         <h3 class="text-5xl font-bold chapter-title">O Legado Eternizado</h3>
                         <p class="text-lg leading-relaxed text-gray-300">Em 2004, o trabalho de uma vida foi consagrado quando o Grupo Folclórico se uniu oficialmente à Associação Cultural Teuto-Brasileiro. A paixão familiar transformou-se num património permanente da cidade. A jornada de Edi espelha a da própria colónia alemã: começou com a coragem dos pioneiros, floresceu com a união da comunidade e eternizou-se através da cultura.</p>
                     </div>
-                    <div class="grid grid-cols-2 gap-4 h-[70vh] md:order-1">
-                        <div class="image-container">
-                            <img src="https://placehold.co/600x800/606C38/FFFFFF?text=Legado" alt="Ilustração do legado de Edi Kaiser Mayer" class="gallery-image">
+                    <div class="grid grid-cols-5 gap-4 md:order-1">
+                        <div class="image-container col-span-2">
+                            <img src="https://placehold.co/400x500/8C6D52/FFFFFF?text=Memória" alt="Ilustração da memória" class="gallery-image">
                         </div>
-                        <div class="image-container mt-12">
-                            <img src="https://placehold.co/600x800/8C6D52/FFFFFF?text=Memória" alt="Ilustração da memória" class="gallery-image">
+                        <div class="image-container col-span-3">
+                            <img src="https://placehold.co/600x400/606C38/FFFFFF?text=Legado" alt="Ilustração do legado de Edi Kaiser Mayer" class="gallery-image">
                         </div>
                     </div>
                 </div>
