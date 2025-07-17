@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edi Kaiser Mayer: Uma Homenagem</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Cinematic Memory -->
+    <!-- Application Structure Plan: A complete redesign into a full-screen, scroll-based storytelling experience. Each chapter of the biography is a dedicated full-screen section with a split-layout (large image on one side, text on the other). This creates a highly visual, immersive, and cinematic narrative flow, guiding the user through the story in a very focused and beautiful way. -->
+    <!-- Visualization & Content Choices: Report Info: Edi Kaiser's biography -> Goal: Create a more beautiful and dynamic presentation -> Viz: Full-screen sections with a split-screen layout. | Report Info: Photos for each life stage -> Goal: Maximize visual impact -> Viz: Large, high-quality placeholder images occupy half the screen in each section. | Report Info: Overall UX -> Goal: Elevate the aesthetic to a cinematic level -> Viz: Refined typography, a dramatic color palette, and smooth scroll-triggered animations for a premium, emotional experience. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #1A1A1A;
+            color: #EAEAEA;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #E5D9B6;
+            font-weight: 800;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 4rem 1.5rem;
+        }
+        .animated-entry {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+        }
+        .animated-entry.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .image-container {
+            overflow: hidden;
+            border-radius: 0.5rem;
+        }
+        .gallery-image {
+            transition: transform 0.5s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .image-container:hover .gallery-image {
+            transform: scale(1.05);
+        }
+        .chapter-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 2px;
+            background-color: #A4907C;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <main>
+        <section id="hero" class="h-screen flex items-center justify-center text-center bg-cover bg-center bg-fixed" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://placehold.co/1920x1080/5C524A/EAEAEA?text=Edi+Kaiser+Mayer)">
+            <div class="animated-entry">
+                <h1 class="text-6xl md:text-8xl font-bold">Edi Kaiser Mayer</h1>
+                <p class="mt-4 text-2xl text-gray-200">Uma Vida de Fé, Família e Tradição</p>
+            </div>
+        </section>
+
+        <section id="raizes" class="section bg-[#2C2C2C]">
+            <div class="container mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center animated-entry">
+                    <div class="grid grid-cols-2 gap-4 h-[70vh]">
+                        <div class="image-container">
+                            <img src="https://placehold.co/600x800/8C6D52/FFFFFF?text=Pioneirismo" alt="Ilustração do pioneirismo da família Kaiser" class="gallery-image">
+                        </div>
+                        <div class="image-container mt-12">
+                            <img src="https://placehold.co/600x800/A4907C/FFFFFF?text=Comunidade" alt="Ilustração da comunidade luterana" class="gallery-image">
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <h3 class="text-5xl font-bold chapter-title">As Raízes na Terra Prometida</h3>
+                        <p class="text-lg leading-relaxed text-gray-300">A história de Edi começa por volta de 1950, com a chegada da sua família a Maringá. Liderados por Frederico Felipe e Adele Stein Kaiser, eles viram no norte paranaense a chance de um futuro próspero. Naquele ambiente de pioneirismo, a comunidade alemã uniu-se em torno do trabalho e da fé luterana, e foi nesse cenário que cresceu a jovem Edi, absorvendo desde cedo o orgulho das suas origens.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="juventude" class="section bg-[#1A1A1A]">
+            <div class="container mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center animated-entry">
+                    <div class="space-y-6 md:order-2">
+                        <h3 class="text-5xl font-bold chapter-title">A Juventude e o Brilho Social</h3>
+                        <p class="text-lg leading-relaxed text-gray-300">À medida que Maringá florescia, Edi tornava-se uma jovem vibrante. Em 1961, o seu carisma foi coroado ao ser eleita 2ª Princesa do Clube Recreativo Teuto-Brasileiro, um reconhecimento do seu papel de liderança. Foi nesse círculo social que conheceu Reynaldo Mayer, o homem com quem construiria a sua vida.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 h-[70vh] md:order-1">
+                        <div class="image-container">
+                             <img src="https://placehold.co/600x800/A4907C/FFFFFF?text=Juventude" alt="Ilustração da juventude de Edi Kaiser" class="gallery-image">
+                        </div>
+                        <div class="image-container mt-12">
+                            <img src="https://placehold.co/600x800/8C6D52/FFFFFF?text=Baile" alt="Ilustração de um baile de clube" class="gallery-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="matriarca" class="section bg-[#2C2C2C]">
+            <div class="container mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center animated-entry">
+                    <div class="grid grid-cols-2 gap-4 h-[70vh]">
+                        <div class="image-container">
+                            <img src="https://placehold.co/600x800/E5D9B6/3C3633?text=Cultura" alt="Ilustração do Grupo Folclórico" class="gallery-image">
+                        </div>
+                        <div class="image-container mt-12">
+                             <img src="https://placehold.co/600x800/A4907C/FFFFFF?text=Família" alt="Ilustração da família" class="gallery-image">
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <h3 class="text-5xl font-bold chapter-title">A Matriarca da Cultura</h3>
+                        <p class="text-lg leading-relaxed text-gray-300">O casamento com Reynaldo deu início a um novo capítulo. Juntos, tiveram quatro filhos e tornaram-se a força motriz do Grupo Folclórico Floresta Negra. Com a sua voz firme, Edi era a apresentadora oficial, enquanto a família inteira se envolvia. O grupo tornou-se uma instituição cultural, colorindo a cidade com a sua paixão.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="legado" class="section bg-[#1A1A1A]">
+            <div class="container mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center animated-entry">
+                    <div class="space-y-6 md:order-2">
+                        <h3 class="text-5xl font-bold chapter-title">O Legado Eternizado</h3>
+                        <p class="text-lg leading-relaxed text-gray-300">Em 2004, o trabalho de uma vida foi consagrado quando o Grupo Folclórico se uniu oficialmente à Associação Cultural Teuto-Brasileiro. A paixão familiar transformou-se num património permanente da cidade. A jornada de Edi espelha a da própria colónia alemã: começou com a coragem dos pioneiros, floresceu com a união da comunidade e eternizou-se através da cultura.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 h-[70vh] md:order-1">
+                        <div class="image-container">
+                            <img src="https://placehold.co/600x800/606C38/FFFFFF?text=Legado" alt="Ilustração do legado de Edi Kaiser Mayer" class="gallery-image">
+                        </div>
+                        <div class="image-container mt-12">
+                            <img src="https://placehold.co/600x800/8C6D52/FFFFFF?text=Memória" alt="Ilustração da memória" class="gallery-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-center py-12">
+        <p class="text-gray-400">Em memória de Edi Kaiser Mayer.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedEntries = document.querySelectorAll('.animated-entry');
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2
+            });
+            animatedEntries.forEach(function(entry) {
+                observer.observe(entry);
+            });
+        });
+    </script>
+</body>
+</html>
