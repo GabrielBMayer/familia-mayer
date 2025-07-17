@@ -93,13 +93,14 @@
                 <a href="#origens" class="nav-link text-white">Origens</a>
                 <a href="#jornada" class="nav-link text-white">A Jornada</a>
                 <a href="#legado" class="nav-link text-white">O Legado</a>
+                <a href="tela_edikaiser.html" class="nav-link text-white">Oma Edi</a>
                 <a href="#arvore" class="nav-link text-white">Árvore</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <section id="hero" class="h-screen min-h-[600px] flex items-center justify-center text-center text-white parallax-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('maringa.jpg');">
+        <section id="hero" class="h-screen min-h-[600px] flex items-center justify-center text-center text-white parallax-bg" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://placehold.co/1920x1080/6c757d/FFFFFF?text=Maringá');">
             <div class="animated-entry">
                 <h1 class="text-5xl md:text-7xl font-bold leading-tight">Tragetoria da Família Mayer</h1>
                 <p class="mt-4 text-xl md:text-2xl font-light">Das raízes europeias à terra roxa de Maringá.</p>
@@ -162,7 +163,7 @@
                      <div class="space-y-16 mt-12">
                         <div class="grid md:grid-cols-2 gap-12 items-center">
                             <div>
-                                <img src="irmao_mayer.jpeg" alt="Foto histórica da Oficina Irmãos Mayer em 1967" class="rounded-lg shadow-xl w-full">
+                                <img src="https://www.maringahistorica.com.br/arquivos/512/oficina-irmaos-mayer-1967_15022019154157.jpg" alt="Foto histórica da Oficina Irmãos Mayer em 1967" class="rounded-lg shadow-xl w-full">
                             </div>
                             <div class="bg-gray-50 p-8 rounded-lg">
                                 <h3 class="text-3xl font-bold mb-3">O Legado Empreendedor</h3>
@@ -171,7 +172,7 @@
                         </div>
                         <div class="grid md:grid-cols-2 gap-12 items-center">
                             <div class="md:order-2">
-                                <img src="primeiros_menbros.png" alt="Ilustração representando a comunidade e a fé" class="rounded-lg shadow-xl w-full">
+                                <img src="https://placehold.co/600x400/A68A64/FFFFFF?text=Fé+e+Comunidade" alt="Ilustração representando a comunidade e a fé" class="rounded-lg shadow-xl w-full">
                             </div>
                             <div class="bg-gray-50 p-8 rounded-lg md:order-1">
                                 <h3 class="text-3xl font-bold mb-3">O Legado Comunitário</h3>
@@ -246,67 +247,81 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', function() {
             
-            const initAnimations = () => {
+            function initAnimations() {
                 const animatedEntries = document.querySelectorAll('.animated-entry');
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
                         if (entry.isIntersecting) {
                             entry.target.classList.add('visible');
                         }
                     });
                 }, { threshold: 0.1 });
-                animatedEntries.forEach(entry => observer.observe(entry));
-            };
+                animatedEntries.forEach(function(entry) {
+                    observer.observe(entry);
+                });
+            }
 
-            const initNavigation = () => {
+            function initNavigation() {
                 const navbar = document.getElementById('navbar');
                 const navTitle = document.getElementById('nav-title');
                 const navLinks = document.querySelectorAll('.nav-link');
 
-                window.addEventListener('scroll', () => {
+                window.addEventListener('scroll', function() {
                     if (window.scrollY > 50) {
                         navbar.classList.add('bg-white', 'shadow-md');
                         navTitle.classList.remove('text-white');
                         navTitle.classList.add('text-[#606C38]');
-                        navLinks.forEach(link => link.classList.remove('text-white'));
+                        navLinks.forEach(function(link) {
+                            link.classList.remove('text-white');
+                        });
                     } else {
                         navbar.classList.remove('bg-white', 'shadow-md');
                         navTitle.classList.add('text-white');
                         navTitle.classList.remove('text-[#606C38]');
-                        navLinks.forEach(link => link.classList.add('text-white'));
+                        navLinks.forEach(function(link) {
+                            link.classList.add('text-white');
+                        });
                     }
                 });
                 
                 const sections = document.querySelectorAll('section');
-                const observer = new IntersectionObserver(entries => {
-                    entries.forEach(entry => {
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
                         if (entry.isIntersecting) {
-                            navLinks.forEach(link => {
-                                link.classList.toggle('active', link.getAttribute('href').substring(1) === entry.target.id);
+                            navLinks.forEach(function(link) {
+                                if (link.getAttribute('href').startsWith('#')) {
+                                    link.classList.toggle('active', link.getAttribute('href').substring(1) === entry.target.id);
+                                }
                             });
                         }
                     });
                 }, { rootMargin: '-50% 0px -50% 0px' });
-                sections.forEach(section => observer.observe(section));
-            };
+                sections.forEach(function(section) {
+                    observer.observe(section);
+                });
+            }
             
-            const initTabs = () => {
+            function initTabs() {
                 const tabs = document.querySelectorAll('.tab');
                 const panes = document.querySelectorAll('.tab-pane');
-                tabs.forEach(tab => {
-                    tab.addEventListener('click', () => {
-                        tabs.forEach(t => t.classList.remove('active'));
+                tabs.forEach(function(tab) {
+                    tab.addEventListener('click', function() {
+                        tabs.forEach(function(t) {
+                            t.classList.remove('active');
+                        });
                         tab.classList.add('active');
                         const targetPane = document.getElementById(tab.dataset.tab);
-                        panes.forEach(pane => pane.classList.add('hidden'));
+                        panes.forEach(function(pane) {
+                            pane.classList.add('hidden');
+                        });
                         targetPane.classList.remove('hidden');
                     });
                 });
-            };
+            }
 
-            const initMapCanvas = () => {
+            function initMapCanvas() {
                 const canvas = document.getElementById('mapCanvas');
                 if (!canvas) return;
                 const ctx = canvas.getContext('2d');
@@ -317,7 +332,7 @@
                 const cp2 = { x: 350, y: 300 };
                 const end = { x: 450, y: 50 };
 
-                const drawPoint = (pos, label, color) => {
+                const drawPoint = function(pos, label, color) {
                     ctx.beginPath();
                     ctx.arc(pos.x, pos.y, 8, 0, Math.PI * 2);
                     ctx.fillStyle = color;
@@ -328,7 +343,7 @@
                     ctx.fillText(label, pos.x, pos.y + 25);
                 };
 
-                const animate = () => {
+                const animate = function() {
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     
                     drawPoint(start, 'Pres. Venceslau, SP', '#A68A64');
@@ -354,7 +369,7 @@
                     }
                 };
 
-                const observer = new IntersectionObserver((entries) => {
+                const observer = new IntersectionObserver(function(entries) {
                     if (entries[0].isIntersecting) {
                         progress = 0;
                         animate();
@@ -362,7 +377,7 @@
                     }
                 }, { threshold: 0.5 });
                 observer.observe(canvas);
-            };
+            }
 
             initAnimations();
             initNavigation();
